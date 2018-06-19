@@ -9,7 +9,9 @@
     "mocha:watch": "npm run mocha -- --watch tests/js",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --require tests/require --recursive --compilers js:babel-core/register --colors --reporter dot tests/js/",
     "lintjs": "eslint -c .eslintrc src/static tests/js || true",
-    "lintscss": "sass-lint --verbose"
+    "lintscss": "sass-lint --verbose",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -75,7 +77,8 @@
     "url-loader": "0.5.7",
     "webpack": "1.12.13",
     "whatwg-fetch": "0.11.0",
-    "yargs": "4.1.0"
+    "yargs": "4.1.0",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "babel-eslint": "5.0.0-beta10",
@@ -103,5 +106,6 @@
     "sinon": "1.17.3",
     "webpack-dev-middleware": "1.5.1",
     "webpack-hot-middleware": "2.7.1"
-  }
+  },
+  "snyk": true
 }
